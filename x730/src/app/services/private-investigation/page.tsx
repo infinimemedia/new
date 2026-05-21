@@ -3,16 +3,16 @@ import ServicePageLayout from "@/components/ui/ServicePageLayout";
 
 export const metadata: Metadata = { title: "Private Investigation" };
 
-export default function PrivateInvestigationPage() {
+export default function Page() {
   return (
     <ServicePageLayout
-      num="05"
+      num="05" subtitle="Private Investigation"
       title="Private Investigation"
-      subtitle="Private Investigation"
-      heroLine="Discreet|Investigation"
+      heroHeading="Discreet" heroAccent="Investigation."
+      shape="target"
       description={[
-        "Truth matters — and obtaining it requires expertise, patience, and absolute discretion. X730's private investigation service delivers findings that are thorough, legally compliant, and actionable.",
-        "Our investigators are former law enforcement professionals who understand both the legal framework and the practical realities of conducting covert investigations. Whether the matter involves corporate fraud, due diligence, asset tracing, or sensitive personal situations, we treat every case with the same seriousness and confidentiality.",
+        "Truth matters — and obtaining it requires expertise, patience, and absolute discretion. X730's investigation service delivers findings that are thorough, legally compliant, and actionable.",
+        "Our investigators are former law enforcement professionals who understand both the legal framework and the practical realities of covert investigations. Every case is treated with seriousness and confidentiality.",
         "Findings are documented meticulously and prepared in formats suitable for legal proceedings when required.",
       ]}
       features={[
@@ -26,10 +26,10 @@ export default function PrivateInvestigationPage() {
         "Court-admissible reporting",
       ]}
       process={[
-        { step: "01", title: "Intake", desc: "Confidential briefing to understand the matter, objectives, and legal requirements." },
-        { step: "02", title: "Investigate", desc: "Systematic covert investigation using appropriate techniques and tools." },
+        { step: "01", title: "Intake", desc: "Confidential briefing on the matter, objectives, and legal requirements." },
+        { step: "02", title: "Investigate", desc: "Systematic covert investigation using appropriate techniques." },
         { step: "03", title: "Document", desc: "All findings documented with evidence in legally compliant formats." },
-        { step: "04", title: "Report", desc: "Comprehensive written report delivered with recommendations for next steps." },
+        { step: "04", title: "Report", desc: "Comprehensive written report with recommendations for next steps." },
       ]}
       prevService={{ label: "Risk Assessments", href: "/services/risk-assessments" }}
       nextService={{ label: "Advanced Technology", href: "/services/advanced-technology" }}

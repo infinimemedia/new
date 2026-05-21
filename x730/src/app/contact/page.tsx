@@ -3,6 +3,7 @@ import { ViewTransition } from "react";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import SectionLabel from "@/components/ui/SectionLabel";
 import ContactForm from "@/components/ui/ContactForm";
+import { GeometricScene3D } from "@/components/3d/Scene3D";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -13,28 +14,35 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <ViewTransition name="page-content" enter="page-enter" exit="page-enter">
+
       {/* Hero */}
-      <section className="relative pt-40 pb-24 overflow-hidden hero-grid">
-        <div className="absolute inset-0 bg-gradient-to-b from-[#080808]/80 to-[#080808]" />
-        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
-          <ScrollReveal>
-            <SectionLabel className="mb-6">Get In Touch</SectionLabel>
-            <h1
-              className="leading-none tracking-wide text-[#F5F5F7] uppercase"
-              style={{
-                fontFamily: "var(--font-bebas), sans-serif",
-                fontSize: "clamp(3rem, 10vw, 9rem)",
-              }}
-            >
-              Contact
-              <br />
-              <span className="text-[#C4A35A]">X730</span>
-            </h1>
-            <p className="mt-6 text-[#9A9AA8] max-w-lg text-lg">
-              All inquiries are treated with absolute confidentiality. We respond
-              to every request personally.
-            </p>
-          </ScrollReveal>
+      <section className="relative min-h-[70vh] flex items-center overflow-hidden bg-[#070707]">
+        <div className="absolute inset-0 flex items-center justify-end">
+          <div className="w-full lg:w-[50%] h-full opacity-70">
+            <GeometricScene3D shape="crystal" color="#ffffff" />
+          </div>
+        </div>
+        <div className="absolute inset-0 bg-gradient-to-r from-[#070707] via-[#070707]/85 to-transparent pointer-events-none" />
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#070707] to-transparent pointer-events-none" />
+
+        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 pt-28 pb-16 w-full">
+          <SectionLabel className="mb-6">Get In Touch</SectionLabel>
+          <h1
+            className="text-gradient-white uppercase leading-[0.9]"
+            style={{
+              fontFamily: "var(--font-bebas), sans-serif",
+              fontSize: "clamp(3.5rem, 11vw, 10rem)",
+            }}
+          >
+            Contact
+            <br />
+            <span className="text-[#C4A35A]" style={{ WebkitTextFillColor: "#C4A35A" }}>
+              X730
+            </span>
+          </h1>
+          <p className="mt-8 text-[#5A5A5A] max-w-md leading-relaxed">
+            All inquiries are treated with absolute confidentiality. We respond to every request personally.
+          </p>
         </div>
       </section>
 
@@ -44,9 +52,9 @@ export default function ContactPage() {
           {/* Info sidebar */}
           <div className="lg:col-span-2 flex flex-col gap-8">
             <ScrollReveal direction="left">
-              <div className="border border-[#1E1E24] bg-[#0D0D0F] p-8">
+              <div className="border border-[#1C1C1C] bg-[#0C0C0C] p-8">
                 <h3
-                  className="text-xl text-[#F5F5F7] uppercase mb-6"
+                  className="text-xl text-[#F4F4F5] uppercase mb-6"
                   style={{ fontFamily: "var(--font-bebas), sans-serif" }}
                 >
                   Contact Details
@@ -56,36 +64,51 @@ export default function ContactPage() {
                     <p className="text-xs text-[#C4A35A] tracking-widest uppercase mb-2">
                       Website
                     </p>
-                    <p className="text-sm text-[#9A9AA8]">www.x730.ca</p>
+                    <p className="text-sm text-[#5A5A5A]">www.x730.ca</p>
                   </div>
                   <div>
                     <p className="text-xs text-[#C4A35A] tracking-widest uppercase mb-2">
                       Location
                     </p>
-                    <p className="text-sm text-[#9A9AA8]">Canada</p>
+                    <p className="text-sm text-[#5A5A5A]">Canada</p>
                   </div>
                   <div>
                     <p className="text-xs text-[#C4A35A] tracking-widest uppercase mb-2">
                       Availability
                     </p>
-                    <p className="text-sm text-[#9A9AA8]">24/7 — We are always available</p>
+                    <p className="text-sm text-[#5A5A5A]">24/7 — We are always available</p>
                   </div>
                 </div>
               </div>
             </ScrollReveal>
 
             <ScrollReveal direction="left" delay={100}>
-              <div className="border border-[#1E1E24] bg-[#0D0D0F] p-8">
+              <div className="border border-[#1C1C1C] bg-[#0C0C0C] p-8">
                 <h3
-                  className="text-xl text-[#F5F5F7] uppercase mb-4"
+                  className="text-xl text-[#F4F4F5] uppercase mb-4"
                   style={{ fontFamily: "var(--font-bebas), sans-serif" }}
                 >
                   Confidentiality
                 </h3>
-                <p className="text-sm text-[#6B6B78] leading-relaxed">
-                  Every inquiry and consultation is protected under strict
-                  confidentiality. We do not share client information under any
-                  circumstances. Your security matters begin and end with us.
+                <p className="text-sm text-[#5A5A5A] leading-relaxed">
+                  Every inquiry and consultation is protected under strict confidentiality.
+                  We do not share client information under any circumstances. Your security
+                  matters begin and end with us.
+                </p>
+              </div>
+            </ScrollReveal>
+
+            <ScrollReveal direction="left" delay={200}>
+              <div className="border border-[#1C1C1C] bg-[#0C0C0C] p-8">
+                <h3
+                  className="text-xl text-[#F4F4F5] uppercase mb-4"
+                  style={{ fontFamily: "var(--font-bebas), sans-serif" }}
+                >
+                  Response Time
+                </h3>
+                <p className="text-sm text-[#5A5A5A] leading-relaxed">
+                  We respond to all inquiries within a few hours. For urgent situations,
+                  indicate the urgency in your message and we will prioritize accordingly.
                 </p>
               </div>
             </ScrollReveal>
@@ -99,6 +122,7 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
+
     </ViewTransition>
   );
 }

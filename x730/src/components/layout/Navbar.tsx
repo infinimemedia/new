@@ -24,46 +24,38 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  useEffect(() => {
-    setOpen(false);
-  }, [pathname]);
+  useEffect(() => { setOpen(false); }, [pathname]);
 
   return (
     <ViewTransition name="site-nav">
       <header
         style={{ viewTransitionName: "site-nav" }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           scrolled
-            ? "bg-[#080808]/95 backdrop-blur-md border-b border-[#1E1E24]"
+            ? "bg-[#070707]/90 backdrop-blur-xl border-b border-[#1C1C1C]"
             : "bg-transparent"
         }`}
       >
-        <nav className="max-w-7xl mx-auto px-6 lg:px-8 h-18 flex items-center justify-between">
-          {/* Logo */}
-          <Link
-            href="/"
-            className="flex items-center gap-2 group"
-            transitionTypes={["nav-back"]}
-          >
+        <nav className="max-w-7xl mx-auto px-6 lg:px-8 flex items-center justify-between h-16">
+          <Link href="/" transitionTypes={["nav-back"]} className="group">
             <span
-              className="font-display text-3xl tracking-widest text-[#F5F5F7] group-hover:text-[#C4A35A] transition-colors duration-200"
+              className="text-2xl tracking-[0.3em] text-[#F4F4F5] group-hover:text-white transition-colors"
               style={{ fontFamily: "var(--font-bebas), sans-serif" }}
             >
               X<span className="text-[#C4A35A]">730</span>
             </span>
           </Link>
 
-          {/* Desktop nav */}
-          <ul className="hidden md:flex items-center gap-8">
+          <ul className="hidden md:flex items-center gap-10">
             {navLinks.map((link) => (
               <li key={link.href}>
                 <Link
                   href={link.href}
                   transitionTypes={["nav-forward"]}
-                  className={`text-sm font-medium tracking-widest uppercase transition-colors duration-200 ${
+                  className={`text-xs font-medium tracking-[0.2em] uppercase transition-colors duration-200 ${
                     pathname === link.href || pathname.startsWith(link.href + "/")
-                      ? "text-[#C4A35A]"
-                      : "text-[#9A9AA8] hover:text-[#F5F5F7]"
+                      ? "text-[#F4F4F5]"
+                      : "text-[#5A5A5A] hover:text-[#F4F4F5]"
                   }`}
                 >
                   {link.label}
@@ -72,52 +64,28 @@ export default function Navbar() {
             ))}
           </ul>
 
-          {/* CTA */}
           <div className="hidden md:block">
-            <Link
-              href="/contact"
-              transitionTypes={["nav-forward"]}
-              className="btn-gold text-xs"
-            >
-              Contact Us
+            <Link href="/contact" transitionTypes={["nav-forward"]} className="btn-white text-xs py-2.5 px-5">
+              Contact
             </Link>
           </div>
 
-          {/* Mobile toggle */}
-          <button
-            onClick={() => setOpen(!open)}
-            className="md:hidden text-[#F5F5F7] p-2"
-            aria-label="Toggle menu"
-          >
-            {open ? <X size={22} /> : <Menu size={22} />}
+          <button onClick={() => setOpen(!open)} className="md:hidden text-[#F4F4F5] p-2" aria-label="Toggle menu">
+            {open ? <X size={20} /> : <Menu size={20} />}
           </button>
         </nav>
 
-        {/* Mobile menu */}
-        <div
-          className={`md:hidden transition-all duration-300 overflow-hidden ${
-            open ? "max-h-96 border-b border-[#1E1E24]" : "max-h-0"
-          } bg-[#080808]/98 backdrop-blur-md`}
-        >
-          <ul className="px-6 py-4 flex flex-col gap-4">
+        <div className={`md:hidden overflow-hidden transition-all duration-300 ${open ? "max-h-96 border-b border-[#1C1C1C]" : "max-h-0"} bg-[#070707]/98 backdrop-blur-xl`}>
+          <ul className="px-6 py-5 flex flex-col gap-5">
             {navLinks.map((link) => (
               <li key={link.href}>
-                <Link
-                  href={link.href}
-                  className={`block text-sm font-medium tracking-widest uppercase py-2 transition-colors ${
-                    pathname === link.href
-                      ? "text-[#C4A35A]"
-                      : "text-[#9A9AA8]"
-                  }`}
-                >
+                <Link href={link.href} className="text-xs font-medium tracking-[0.2em] uppercase text-[#5A5A5A]">
                   {link.label}
                 </Link>
               </li>
             ))}
             <li className="pt-2">
-              <Link href="/contact" className="btn-gold w-full justify-center text-xs">
-                Contact Us
-              </Link>
+              <Link href="/contact" className="btn-white w-full justify-center text-xs py-2.5">Contact</Link>
             </li>
           </ul>
         </div>

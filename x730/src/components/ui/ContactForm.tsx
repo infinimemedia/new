@@ -43,8 +43,8 @@ export default function ContactForm() {
 
   if (state === "sent") {
     return (
-      <div className="border border-[#C4A35A]/30 bg-[#0D0D0F] p-12 text-center">
-        <div className="w-16 h-16 bg-[#C4A35A]/10 border border-[#C4A35A]/30 flex items-center justify-center mx-auto mb-6">
+      <div className="border border-[#1C1C1C] bg-[#0C0C0C] p-12 text-center">
+        <div className="w-16 h-16 bg-[#F4F4F5]/5 border border-[#1C1C1C] flex items-center justify-center mx-auto mb-6">
           <span
             className="text-3xl text-[#C4A35A]"
             style={{ fontFamily: "var(--font-bebas), sans-serif" }}
@@ -53,12 +53,12 @@ export default function ContactForm() {
           </span>
         </div>
         <h3
-          className="text-2xl text-[#F5F5F7] uppercase mb-4"
+          className="text-2xl text-[#F4F4F5] uppercase mb-4"
           style={{ fontFamily: "var(--font-bebas), sans-serif" }}
         >
           Message Received
         </h3>
-        <p className="text-[#9A9AA8] text-sm">
+        <p className="text-[#5A5A5A] text-sm">
           We will respond to your inquiry personally within 24 hours. All
           communications are treated with strict confidentiality.
         </p>
@@ -69,10 +69,10 @@ export default function ContactForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="border border-[#1E1E24] bg-[#0D0D0F] p-8 lg:p-10"
+      className="border border-[#1C1C1C] bg-[#0C0C0C] p-8 lg:p-10"
     >
       <h3
-        className="text-2xl text-[#F5F5F7] uppercase mb-8"
+        className="text-2xl text-[#F4F4F5] uppercase mb-8"
         style={{ fontFamily: "var(--font-bebas), sans-serif" }}
       >
         Send Us a Message
@@ -90,7 +90,7 @@ export default function ContactForm() {
             required
             value={form.name}
             onChange={handleChange}
-            className="bg-[#080808] border border-[#1E1E24] text-[#F5F5F7] text-sm px-4 py-3 outline-none focus:border-[#C4A35A] transition-colors placeholder:text-[#3A3A42]"
+            className="bg-[#070707] border border-[#1C1C1C] text-[#F4F4F5] text-sm px-4 py-3 outline-none focus:border-[#C4A35A] transition-colors placeholder:text-[#3a3a3a]"
             placeholder="John Smith"
           />
         </div>
@@ -105,7 +105,7 @@ export default function ContactForm() {
             name="company"
             value={form.company}
             onChange={handleChange}
-            className="bg-[#080808] border border-[#1E1E24] text-[#F5F5F7] text-sm px-4 py-3 outline-none focus:border-[#C4A35A] transition-colors placeholder:text-[#3A3A42]"
+            className="bg-[#070707] border border-[#1C1C1C] text-[#F4F4F5] text-sm px-4 py-3 outline-none focus:border-[#C4A35A] transition-colors placeholder:text-[#3a3a3a]"
             placeholder="Company Name"
           />
         </div>
@@ -121,7 +121,7 @@ export default function ContactForm() {
             required
             value={form.email}
             onChange={handleChange}
-            className="bg-[#080808] border border-[#1E1E24] text-[#F5F5F7] text-sm px-4 py-3 outline-none focus:border-[#C4A35A] transition-colors placeholder:text-[#3A3A42]"
+            className="bg-[#070707] border border-[#1C1C1C] text-[#F4F4F5] text-sm px-4 py-3 outline-none focus:border-[#C4A35A] transition-colors placeholder:text-[#3a3a3a]"
             placeholder="john@company.com"
           />
         </div>
@@ -136,7 +136,7 @@ export default function ContactForm() {
             name="phone"
             value={form.phone}
             onChange={handleChange}
-            className="bg-[#080808] border border-[#1E1E24] text-[#F5F5F7] text-sm px-4 py-3 outline-none focus:border-[#C4A35A] transition-colors placeholder:text-[#3A3A42]"
+            className="bg-[#070707] border border-[#1C1C1C] text-[#F4F4F5] text-sm px-4 py-3 outline-none focus:border-[#C4A35A] transition-colors placeholder:text-[#3a3a3a]"
             placeholder="+1 (000) 000-0000"
           />
         </div>
@@ -150,9 +150,9 @@ export default function ContactForm() {
             name="service"
             value={form.service}
             onChange={handleChange}
-            className="bg-[#080808] border border-[#1E1E24] text-[#F5F5F7] text-sm px-4 py-3 outline-none focus:border-[#C4A35A] transition-colors appearance-none cursor-pointer"
+            className="bg-[#070707] border border-[#1C1C1C] text-[#F4F4F5] text-sm px-4 py-3 outline-none focus:border-[#C4A35A] transition-colors appearance-none cursor-pointer"
           >
-            <option value="" className="text-[#3A3A42]">
+            <option value="" className="text-[#3a3a3a]">
               Select a service...
             </option>
             {services.map((s) => (
@@ -174,20 +174,20 @@ export default function ContactForm() {
             rows={5}
             value={form.message}
             onChange={handleChange}
-            className="bg-[#080808] border border-[#1E1E24] text-[#F5F5F7] text-sm px-4 py-3 outline-none focus:border-[#C4A35A] transition-colors resize-none placeholder:text-[#3A3A42]"
+            className="bg-[#070707] border border-[#1C1C1C] text-[#F4F4F5] text-sm px-4 py-3 outline-none focus:border-[#C4A35A] transition-colors resize-none placeholder:text-[#3a3a3a]"
             placeholder="Briefly describe your security requirements or inquiry..."
           />
         </div>
       </div>
 
       <div className="mt-8 flex items-center justify-between">
-        <p className="text-xs text-[#6B6B78]">
+        <p className="text-xs text-[#5A5A5A]">
           All communications are strictly confidential.
         </p>
         <button
           type="submit"
           disabled={state === "sending"}
-          className="btn-gold disabled:opacity-50 disabled:cursor-not-allowed"
+          className="btn-white disabled:opacity-50 disabled:cursor-not-allowed"
         >
           {state === "sending" ? (
             <>
