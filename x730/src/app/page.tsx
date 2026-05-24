@@ -1,8 +1,10 @@
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
+import { cn } from '@/lib/utils';
 import HalideLanding from '@/components/ui/halide-topo-hero';
 import InteractiveSelector from '@/components/ui/interactive-selector';
 import ScrollReveal from '@/components/ui/ScrollReveal';
+import { GridPattern } from '@/components/ui/grid-pattern';
 
 /* ─────────────────────────────────────────────────────────
    DATA
@@ -46,20 +48,24 @@ export default function HomePage() {
   return (
     <>
       {/* ══════════════════════════════════════════════════
-          HERO — Halide Topo
+          HERO — Halide Topo 3D Parallax
       ══════════════════════════════════════════════════ */}
       <HalideLanding />
 
       {/* ══════════════════════════════════════════════════
-          SERVICES — INTERACTIVE SELECTOR
+          SERVICES — Interactive Selector
+          GridPattern: dashed skew behind the selector
       ══════════════════════════════════════════════════ */}
       <section className="relative bg-[#070707] border-t border-[#0F0F0F] py-24 px-6 lg:px-16 overflow-hidden">
-        <div className="pointer-events-none absolute inset-0 opacity-[0.025]"
-          style={{
-            backgroundImage:
-              'linear-gradient(to right,#C4A35A 1px,transparent 1px),linear-gradient(to bottom,#C4A35A 1px,transparent 1px)',
-            backgroundSize: '80px 80px',
-          }}
+        {/* Gold dashed grid — skewed, fades out toward right */}
+        <GridPattern
+          width={44}
+          height={44}
+          strokeDasharray="3 3"
+          className={cn(
+            'fill-[#C4A35A]/[0.03] stroke-[#C4A35A]/[0.07]',
+            '[mask-image:linear-gradient(to_right,white_0%,transparent_80%)]',
+          )}
         />
 
         <div className="relative z-10 max-w-5xl mx-auto">
@@ -77,7 +83,7 @@ export default function HomePage() {
             >
               Seven Disciplines.
               <br />
-              <span className="text-[#3A3A3A]">One Standard.</span>
+              <span className="text-[#2A2A2A]">One Standard.</span>
             </h2>
           </ScrollReveal>
 
@@ -99,9 +105,24 @@ export default function HomePage() {
 
       {/* ══════════════════════════════════════════════════
           STATS
+          GridPattern: radial, highlighted squares on each stat
       ══════════════════════════════════════════════════ */}
-      <section className="border-y border-[#111] bg-[#0C0C0C]">
-        <div className="max-w-5xl mx-auto px-6 lg:px-16 py-16">
+      <section className="relative border-y border-[#111] bg-[#0C0C0C] overflow-hidden">
+        {/* Subtle full-width grid */}
+        <GridPattern
+          width={36}
+          height={36}
+          squares={[
+            [1, 2], [3, 1], [6, 3], [9, 2], [12, 1], [15, 3],
+            [2, 5], [5, 4], [8, 5], [11, 4], [14, 5],
+          ]}
+          className={cn(
+            'fill-[#C4A35A]/[0.06] stroke-[#C4A35A]/[0.04]',
+            '[mask-image:radial-gradient(ellipse_80%_60%_at_50%_50%,white,transparent)]',
+          )}
+        />
+
+        <div className="relative z-10 max-w-5xl mx-auto px-6 lg:px-16 py-16">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-px bg-[#111]">
             {stats.map((s, i) => (
               <ScrollReveal key={s.label} delay={i * 80}>
@@ -128,9 +149,24 @@ export default function HomePage() {
 
       {/* ══════════════════════════════════════════════════
           ABOUT
+          GridPattern: bottom-right diagonal gradient mask
       ══════════════════════════════════════════════════ */}
       <section className="relative bg-[#070707] py-28 px-6 lg:px-16 overflow-hidden">
-        <div className="max-w-5xl mx-auto">
+        {/* Corner grid — fades in from bottom-right */}
+        <GridPattern
+          width={50}
+          height={50}
+          squares={[
+            [8, 3], [10, 5], [12, 3], [14, 5], [16, 3],
+            [9, 7], [11, 7], [13, 7], [15, 7],
+          ]}
+          className={cn(
+            'fill-[#C4A35A]/[0.08] stroke-[#C4A35A]/[0.05]',
+            '[mask-image:linear-gradient(to_bottom_left,white_0%,transparent_55%)]',
+          )}
+        />
+
+        <div className="relative z-10 max-w-5xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-20 items-start">
 
             {/* Left — heading */}
@@ -158,7 +194,10 @@ export default function HomePage() {
                 protection. Built by operators, trusted by corporations,
                 governments, and individuals who cannot afford failure.
               </p>
-              <Link href="/about" className="inline-flex items-center gap-2 text-[#C4A35A] text-xs font-bold uppercase tracking-[0.2em] hover:gap-4 transition-all duration-200">
+              <Link
+                href="/about"
+                className="inline-flex items-center gap-2 text-[#C4A35A] text-xs font-bold uppercase tracking-[0.2em] hover:gap-4 transition-all duration-200"
+              >
                 About X730
                 <ArrowRight size={13} />
               </Link>
@@ -194,8 +233,16 @@ export default function HomePage() {
       {/* ══════════════════════════════════════════════════
           QUOTE DIVIDER
       ══════════════════════════════════════════════════ */}
-      <section className="bg-[#C4A35A] py-16 px-6 lg:px-16 overflow-hidden">
-        <div className="max-w-5xl mx-auto text-center">
+      <section className="relative bg-[#C4A35A] py-16 px-6 lg:px-16 overflow-hidden">
+        {/* Very subtle dark grid on gold — adds texture */}
+        <GridPattern
+          width={32}
+          height={32}
+          strokeDasharray="2 4"
+          className="fill-[#070707]/[0.04] stroke-[#070707]/[0.06]"
+        />
+
+        <div className="relative z-10 max-w-5xl mx-auto text-center">
           <p
             className="text-[#070707] uppercase leading-tight"
             style={{
@@ -213,15 +260,26 @@ export default function HomePage() {
 
       {/* ══════════════════════════════════════════════════
           CTA
+          GridPattern: radial burst with gold squares
       ══════════════════════════════════════════════════ */}
-      <section className="relative bg-[#070707] py-36 px-6 lg:px-16 border-t border-[#0F0F0F]">
-        <div className="pointer-events-none absolute inset-0 opacity-[0.025]"
-          style={{
-            backgroundImage:
-              'radial-gradient(ellipse at center, #C4A35A 0%, transparent 70%)',
-            backgroundSize: '100% 100%',
-          }}
+      <section className="relative bg-[#070707] py-36 px-6 lg:px-16 border-t border-[#0F0F0F] overflow-hidden">
+        {/* Radial grid centred on the heading */}
+        <GridPattern
+          width={40}
+          height={40}
+          squares={[
+            [3, 3],  [4, 1],  [6, 2],  [8, 3],  [10, 1],
+            [5, 5],  [7, 4],  [9, 5],  [11, 4], [13, 5],
+            [4, 7],  [6, 6],  [8, 7],  [10, 6], [12, 7],
+            [3, 9],  [5, 9],  [7, 8],  [9, 9],  [11, 8],
+          ]}
+          className={cn(
+            'fill-[#C4A35A]/[0.07] stroke-[#C4A35A]/[0.05]',
+            '[mask-image:radial-gradient(500px_circle_at_center,white,transparent)]',
+            'inset-x-0 inset-y-[-20%] h-[140%]',
+          )}
         />
+
         <div className="relative z-10 max-w-2xl mx-auto text-center">
           <ScrollReveal>
             <span className="text-[11px] tracking-[0.35em] uppercase text-[#C4A35A] font-semibold mb-6 inline-block">
