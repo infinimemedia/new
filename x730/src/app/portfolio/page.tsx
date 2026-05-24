@@ -5,6 +5,7 @@ import { ArrowRight } from "lucide-react";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import SectionLabel from "@/components/ui/SectionLabel";
 import { GeometricScene3D } from "@/components/3d/Scene3D";
+import { ButtonHover } from "@/components/ui/button-hover";
 
 export const metadata: Metadata = {
   title: "Portfolio",
@@ -170,10 +171,10 @@ export default function PortfolioPage() {
             <p className="text-[#5A5A5A] mb-10">
               Every engagement starts with a confidential conversation. Tell us what you need.
             </p>
-            <Link href="/contact" transitionTypes={["nav-forward"]} className="btn-white">
+            <ButtonHover href="/contact" variant="gold" transitionTypes={["nav-forward"]}>
               Start a Conversation
               <ArrowRight size={14} />
-            </Link>
+            </ButtonHover>
           </ScrollReveal>
         </div>
       </section>

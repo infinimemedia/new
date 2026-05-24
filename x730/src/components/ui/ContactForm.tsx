@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { ArrowRight, Loader2 } from "lucide-react";
+import { ButtonHover } from "@/components/ui/button-hover";
 
 export default function ContactForm() {
   const [state, setState] = useState<"idle" | "sending" | "sent" | "error">("idle");
@@ -184,10 +185,10 @@ export default function ContactForm() {
         <p className="text-xs text-[#5A5A5A]">
           All communications are strictly confidential.
         </p>
-        <button
+        <ButtonHover
           type="submit"
+          variant="gold"
           disabled={state === "sending"}
-          className="btn-white disabled:opacity-50 disabled:cursor-not-allowed"
         >
           {state === "sending" ? (
             <>
@@ -200,7 +201,7 @@ export default function ContactForm() {
               <ArrowRight size={14} />
             </>
           )}
-        </button>
+        </ButtonHover>
       </div>
     </form>
   );

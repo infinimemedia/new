@@ -5,6 +5,7 @@ import { ArrowRight, CheckCircle } from "lucide-react";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import SectionLabel from "@/components/ui/SectionLabel";
 import { GeometricScene3D } from "@/components/3d/Scene3D";
+import { ButtonHover } from "@/components/ui/button-hover";
 
 export const metadata: Metadata = { title: "About" };
 
@@ -128,9 +129,9 @@ export default function AboutPage() {
               Work With The Best
             </h2>
             <p className="text-[#5A5A5A] mb-10">Schedule a confidential consultation with our team.</p>
-            <Link href="/contact" transitionTypes={["nav-forward"]} className="btn-white">
+            <ButtonHover href="/contact" variant="gold" transitionTypes={["nav-forward"]}>
               Get in Touch <ArrowRight size={14} />
-            </Link>
+            </ButtonHover>
           </ScrollReveal>
         </div>
       </section>

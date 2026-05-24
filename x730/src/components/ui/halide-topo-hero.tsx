@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef } from 'react';
 import Link from 'next/link';
+import { ButtonHover } from '@/components/ui/button-hover';
 
 const HalideLanding: React.FC = () => {
   const canvasRef = useRef<HTMLDivElement>(null);
@@ -160,24 +161,8 @@ const HalideLanding: React.FC = () => {
           text-transform: uppercase;
         }
 
-        .x730-cta-btn {
+        .x730-cta-btn-wrapper {
           pointer-events: auto;
-          background: #C4A35A;
-          color: #070707;
-          padding: 0.9rem 2rem;
-          text-decoration: none;
-          font-weight: 700;
-          font-size: 0.68rem;
-          letter-spacing: 0.22em;
-          text-transform: uppercase;
-          clip-path: polygon(0 0, 100% 0, 100% 68%, 87% 100%, 0 100%);
-          transition: background 0.3s ease, transform 0.3s ease;
-          display: inline-block;
-          font-family: var(--font-sans), sans-serif;
-        }
-        .x730-cta-btn:hover {
-          background: #D4B56A;
-          transform: translateY(-4px);
         }
 
         /* Scroll indicator */
@@ -291,9 +276,11 @@ const HalideLanding: React.FC = () => {
             <p>CLOSE PROTECTION &amp; SECURITY INTELLIGENCE</p>
           </div>
 
-          <Link href="/contact" className="x730-cta-btn">
-            REQUEST BRIEFING
-          </Link>
+          <div className="x730-cta-btn-wrapper">
+            <ButtonHover href="/contact" variant="gold" size="md">
+              Request Briefing
+            </ButtonHover>
+          </div>
         </div>
       </div>
 

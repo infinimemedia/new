@@ -5,6 +5,7 @@ import { ArrowRight } from "lucide-react";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import SectionLabel from "@/components/ui/SectionLabel";
 import { GeometricScene3D } from "@/components/3d/Scene3D";
+import { ButtonHover } from "@/components/ui/button-hover";
 
 export const metadata: Metadata = {
   title: "Services",
@@ -178,10 +179,10 @@ export default function ServicesPage() {
               Our specialists will assess your situation and recommend the right solution.
               Consultations are confidential and obligation-free.
             </p>
-            <Link href="/contact" transitionTypes={["nav-forward"]} className="btn-white">
+            <ButtonHover href="/contact" variant="gold" transitionTypes={["nav-forward"]}>
               Speak With a Specialist
               <ArrowRight size={16} />
-            </Link>
+            </ButtonHover>
           </ScrollReveal>
         </div>
       </section>

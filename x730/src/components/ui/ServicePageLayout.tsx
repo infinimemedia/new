@@ -4,6 +4,7 @@ import { ArrowRight, ArrowLeft, CheckCircle } from "lucide-react";
 import ScrollReveal from "./ScrollReveal";
 import SectionLabel from "./SectionLabel";
 import { GeometricScene3D } from "@/components/3d/Scene3D";
+import { ButtonHover } from "@/components/ui/button-hover";
 
 type ShapeType = "icosahedron" | "torus" | "octahedron" | "radar" | "rings" | "particles" | "crystal" | "shield" | "target" | "circuit";
 
@@ -102,9 +103,14 @@ export default function ServicePageLayout({
                 ))}
               </ul>
               <div className="mt-8 pt-8 border-t border-[#1C1C1C]">
-                <Link href="/contact" transitionTypes={["nav-forward"]} className="btn-white w-full justify-center text-xs py-3">
+                <ButtonHover
+                  href="/contact"
+                  variant="gold"
+                  className="w-full justify-center"
+                  transitionTypes={["nav-forward"]}
+                >
                   Request This Service <ArrowRight size={12} />
-                </Link>
+                </ButtonHover>
               </div>
             </div>
           </ScrollReveal>

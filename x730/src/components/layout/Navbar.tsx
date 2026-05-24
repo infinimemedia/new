@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ViewTransition } from "react";
 import { Menu, X } from "lucide-react";
+import { ButtonHover } from "@/components/ui/button-hover";
 
 const navLinks = [
   { label: "About", href: "/about" },
@@ -65,9 +66,9 @@ export default function Navbar() {
           </ul>
 
           <div className="hidden md:block">
-            <Link href="/contact" transitionTypes={["nav-forward"]} className="btn-white text-xs py-2.5 px-5">
+            <ButtonHover href="/contact" variant="gold" size="sm" transitionTypes={["nav-forward"]}>
               Contact
-            </Link>
+            </ButtonHover>
           </div>
 
           <button onClick={() => setOpen(!open)} className="md:hidden text-[#F4F4F5] p-2" aria-label="Toggle menu">
@@ -85,7 +86,9 @@ export default function Navbar() {
               </li>
             ))}
             <li className="pt-2">
-              <Link href="/contact" className="btn-white w-full justify-center text-xs py-2.5">Contact</Link>
+              <ButtonHover href="/contact" variant="gold" size="sm" className="w-full justify-center">
+                Contact
+              </ButtonHover>
             </li>
           </ul>
         </div>

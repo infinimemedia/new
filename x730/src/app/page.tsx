@@ -5,6 +5,7 @@ import HalideLanding from '@/components/ui/halide-topo-hero';
 import InteractiveSelector from '@/components/ui/interactive-selector';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import { GridPattern } from '@/components/ui/grid-pattern';
+import { ButtonHover } from '@/components/ui/button-hover';
 
 /* ─────────────────────────────────────────────────────────
    DATA
@@ -307,19 +308,13 @@ export default function HomePage() {
               your solution together.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Link
-                href="/contact"
-                className="inline-flex items-center gap-2 bg-[#C4A35A] text-[#070707] text-xs font-bold uppercase tracking-[0.18em] px-10 py-4 hover:bg-[#D4B56A] transition-colors duration-200"
-              >
+              <ButtonHover href="/contact" variant="gold" size="lg">
                 Book a Consultation
                 <ArrowRight size={13} />
-              </Link>
-              <Link
-                href="/services"
-                className="inline-flex items-center gap-2 border border-[#1C1C1C] text-[#5A5A5A] text-xs font-bold uppercase tracking-[0.18em] px-10 py-4 hover:border-[#C4A35A] hover:text-[#C4A35A] transition-colors duration-200"
-              >
+              </ButtonHover>
+              <ButtonHover href="/services" variant="outline" size="lg">
                 Explore Services
-              </Link>
+              </ButtonHover>
             </div>
           </ScrollReveal>
         </div>

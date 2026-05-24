@@ -6,6 +6,7 @@ import ScrollReveal from "@/components/ui/ScrollReveal";
 import SectionLabel from "@/components/ui/SectionLabel";
 import FaqAccordion from "@/components/ui/FaqAccordion";
 import { GeometricScene3D } from "@/components/3d/Scene3D";
+import { ButtonHover } from "@/components/ui/button-hover";
 
 export const metadata: Metadata = {
   title: "FAQ",
@@ -104,10 +105,10 @@ export default function FaqPage() {
               Still Have Questions?
             </h2>
             <p className="text-[#5A5A5A] mb-10">We are happy to speak directly.</p>
-            <Link href="/contact" transitionTypes={["nav-forward"]} className="btn-white">
+            <ButtonHover href="/contact" variant="gold" transitionTypes={["nav-forward"]}>
               Contact Us
               <ArrowRight size={14} />
-            </Link>
+            </ButtonHover>
           </ScrollReveal>
         </div>
       </section>
