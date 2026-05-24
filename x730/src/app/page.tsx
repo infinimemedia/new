@@ -1,5 +1,6 @@
 import Link from 'next/link';
-import { ArrowRight, ChevronDown } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
+import HalideLanding from '@/components/ui/halide-topo-hero';
 import InteractiveSelector from '@/components/ui/interactive-selector';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 
@@ -45,85 +46,9 @@ export default function HomePage() {
   return (
     <>
       {/* ══════════════════════════════════════════════════
-          HERO
+          HERO — Halide Topo
       ══════════════════════════════════════════════════ */}
-      <section className="relative min-h-screen flex flex-col items-start justify-center overflow-hidden bg-[#070707] px-6 lg:px-16 pt-24 pb-20">
-        {/* Grid overlay */}
-        <div
-          className="pointer-events-none absolute inset-0 opacity-[0.035]"
-          style={{
-            backgroundImage:
-              'linear-gradient(to right,#F4F4F5 1px,transparent 1px),linear-gradient(to bottom,#F4F4F5 1px,transparent 1px)',
-            backgroundSize: '60px 60px',
-          }}
-        />
-
-        {/* Gold vertical line accent */}
-        <div className="absolute left-6 lg:left-16 top-32 bottom-20 w-px bg-gradient-to-b from-[#C4A35A]/60 via-[#C4A35A]/20 to-transparent" />
-
-        <div className="relative z-10 max-w-5xl pl-8 lg:pl-12">
-          {/* Eyebrow */}
-          <div className="flex items-center gap-3 mb-10">
-            <span className="w-6 h-px bg-[#C4A35A]" />
-            <span className="text-[11px] tracking-[0.35em] uppercase text-[#C4A35A] font-semibold">
-              X730 INC. · Elite Security
-            </span>
-          </div>
-
-          {/* Headline */}
-          <h1
-            className="uppercase leading-[0.88] tracking-tight text-[#F4F4F5] mb-8"
-            style={{
-              fontFamily: 'var(--font-bebas)',
-              fontSize: 'clamp(4.5rem,14vw,13rem)',
-            }}
-          >
-            Security.
-            <br />
-            Intelligence.
-            <br />
-            <span
-              style={{
-                background: 'linear-gradient(90deg,#C4A35A 0%,#D4B56A 60%,#C4A35A 100%)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                backgroundClip: 'text',
-              }}
-            >
-              Precision.
-            </span>
-          </h1>
-
-          {/* Sub */}
-          <p className="text-[#5A5A5A] text-base lg:text-lg leading-relaxed max-w-lg mb-12">
-            Managing all security needs from A&nbsp;to&nbsp;Z.
-            Selecting the best professionals. Zero compromise.
-          </p>
-
-          {/* CTAs */}
-          <div className="flex flex-wrap gap-4">
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 bg-[#C4A35A] text-[#070707] text-xs font-bold uppercase tracking-[0.18em] px-8 py-4 hover:bg-[#D4B56A] transition-colors duration-200"
-            >
-              Request Consultation
-              <ArrowRight size={13} />
-            </Link>
-            <Link
-              href="/services"
-              className="inline-flex items-center gap-2 border border-[#1C1C1C] text-[#5A5A5A] text-xs font-bold uppercase tracking-[0.18em] px-8 py-4 hover:border-[#C4A35A] hover:text-[#C4A35A] transition-colors duration-200"
-            >
-              Our Services
-            </Link>
-          </div>
-        </div>
-
-        {/* Scroll cue */}
-        <div className="absolute bottom-10 right-8 lg:right-16 flex flex-col items-center gap-2 opacity-25">
-          <ChevronDown size={14} className="text-[#5A5A5A] animate-bounce" />
-          <div className="w-px h-12 bg-gradient-to-b from-[#5A5A5A] to-transparent" />
-        </div>
-      </section>
+      <HalideLanding />
 
       {/* ══════════════════════════════════════════════════
           SERVICES — INTERACTIVE SELECTOR
