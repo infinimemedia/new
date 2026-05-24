@@ -57,14 +57,18 @@ export default function HomePage() {
           GridPattern: dashed skew behind the selector
       ══════════════════════════════════════════════════ */}
       <section className="relative bg-[#070707] border-t border-[#0F0F0F] py-24 px-6 lg:px-16 overflow-hidden">
-        {/* Gold dashed grid — skewed, fades out toward right */}
+        {/* Gold dashed grid — clearly visible */}
         <GridPattern
-          width={44}
-          height={44}
-          strokeDasharray="3 3"
+          width={40}
+          height={40}
+          strokeDasharray="4 2"
+          squares={[
+            [2, 2], [4, 1], [7, 3], [10, 2], [13, 4],
+            [3, 5], [6, 4], [9, 6], [12, 5],
+          ]}
           className={cn(
-            'fill-[#C4A35A]/20 stroke-[#C4A35A]/25',
-            '[mask-image:linear-gradient(to_right,white_0%,transparent_80%)]',
+            'fill-[#C4A35A]/40 stroke-[#C4A35A]/35',
+            '[mask-image:linear-gradient(to_right,white_20%,transparent_90%)]',
           )}
         />
 
@@ -108,17 +112,18 @@ export default function HomePage() {
           GridPattern: radial, highlighted squares on each stat
       ══════════════════════════════════════════════════ */}
       <section className="relative border-y border-[#111] bg-[#0C0C0C] overflow-hidden">
-        {/* Subtle full-width grid */}
+        {/* Strong radial grid with prominent gold squares */}
         <GridPattern
           width={36}
           height={36}
           squares={[
             [1, 2], [3, 1], [6, 3], [9, 2], [12, 1], [15, 3],
             [2, 5], [5, 4], [8, 5], [11, 4], [14, 5],
+            [4, 3], [7, 2], [10, 4], [13, 2],
           ]}
           className={cn(
-            'fill-[#C4A35A]/30 stroke-[#C4A35A]/15',
-            '[mask-image:radial-gradient(ellipse_80%_60%_at_50%_50%,white,transparent)]',
+            'fill-[#C4A35A]/50 stroke-[#C4A35A]/25',
+            '[mask-image:radial-gradient(ellipse_90%_70%_at_50%_50%,white,transparent)]',
           )}
         />
 
@@ -152,17 +157,18 @@ export default function HomePage() {
           GridPattern: bottom-right diagonal gradient mask
       ══════════════════════════════════════════════════ */}
       <section className="relative bg-[#070707] py-28 px-6 lg:px-16 overflow-hidden">
-        {/* Corner grid — fades in from bottom-right */}
+        {/* Full grid — strong diagonal fade, visible squares on right */}
         <GridPattern
           width={50}
           height={50}
           squares={[
-            [8, 3], [10, 5], [12, 3], [14, 5], [16, 3],
-            [9, 7], [11, 7], [13, 7], [15, 7],
+            [8, 2], [10, 4], [12, 2], [14, 4], [16, 2],
+            [9, 6], [11, 5], [13, 6], [15, 5],
+            [7, 4], [17, 3], [18, 6],
           ]}
           className={cn(
-            'fill-[#C4A35A]/25 stroke-[#C4A35A]/15',
-            '[mask-image:linear-gradient(to_bottom_left,white_0%,transparent_55%)]',
+            'fill-[#C4A35A]/45 stroke-[#C4A35A]/20',
+            '[mask-image:linear-gradient(to_bottom_left,white_10%,transparent_60%)]',
           )}
         />
 
@@ -234,12 +240,12 @@ export default function HomePage() {
           QUOTE DIVIDER
       ══════════════════════════════════════════════════ */}
       <section className="relative bg-[#C4A35A] py-16 px-6 lg:px-16 overflow-hidden">
-        {/* Very subtle dark grid on gold — adds texture */}
+        {/* Dark grid on gold — clearly visible texture */}
         <GridPattern
           width={32}
           height={32}
           strokeDasharray="2 4"
-          className="fill-black/10 stroke-black/20"
+          className="fill-black/20 stroke-black/30"
         />
 
         <div className="relative z-10 max-w-5xl mx-auto text-center">
@@ -272,10 +278,11 @@ export default function HomePage() {
             [5, 5],  [7, 4],  [9, 5],  [11, 4], [13, 5],
             [4, 7],  [6, 6],  [8, 7],  [10, 6], [12, 7],
             [3, 9],  [5, 9],  [7, 8],  [9, 9],  [11, 8],
+            [2, 5],  [12, 3], [14, 7], [1, 8],  [13, 1],
           ]}
           className={cn(
-            'fill-[#C4A35A]/30 stroke-[#C4A35A]/20',
-            '[mask-image:radial-gradient(500px_circle_at_center,white,transparent)]',
+            'fill-[#C4A35A]/50 stroke-[#C4A35A]/30',
+            '[mask-image:radial-gradient(600px_circle_at_center,white,transparent)]',
             'inset-x-0 inset-y-[-20%] h-[140%]',
           )}
         />
