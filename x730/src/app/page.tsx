@@ -57,7 +57,7 @@ export default function HomePage() {
           SERVICES — Interactive Selector
           GridPattern: dashed skew behind the selector
       ══════════════════════════════════════════════════ */}
-      <section className="relative bg-[#070707] border-t border-[#0F0F0F] py-24 px-6 lg:px-16 overflow-hidden">
+      <section className="relative bg-[#070707] border-t border-[#0F0F0F] py-14 md:py-24 px-6 lg:px-16 overflow-hidden">
         {/* Gold dashed grid — clearly visible */}
         <GridPattern
           width={40}
@@ -74,7 +74,7 @@ export default function HomePage() {
         />
 
         <div className="relative z-10 max-w-5xl mx-auto">
-          <ScrollReveal className="mb-14">
+          <ScrollReveal className="mb-10 md:mb-14">
             <span className="text-[11px] tracking-[0.35em] uppercase text-[#C4A35A] font-semibold flex items-center gap-2 mb-4">
               <span className="w-5 h-px bg-[#C4A35A]" />
               Full Spectrum Protection
@@ -132,7 +132,7 @@ export default function HomePage() {
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-px bg-[#111]">
             {stats.map((s, i) => (
               <ScrollReveal key={s.label} delay={i * 80}>
-                <div className="bg-[#0C0C0C] px-10 py-10 text-center">
+                <div className="bg-[#0C0C0C] px-5 py-8 sm:px-10 sm:py-10 text-center">
                   <div
                     className="text-[#C4A35A] mb-1"
                     style={{
@@ -157,7 +157,7 @@ export default function HomePage() {
           ABOUT
           GridPattern: bottom-right diagonal gradient mask
       ══════════════════════════════════════════════════ */}
-      <section className="relative bg-[#070707] py-28 px-6 lg:px-16 overflow-hidden">
+      <section className="relative bg-[#070707] py-16 md:py-28 px-6 lg:px-16 overflow-hidden">
         {/* Full grid — strong diagonal fade, visible squares on right */}
         <GridPattern
           width={50}
@@ -174,7 +174,7 @@ export default function HomePage() {
         />
 
         <div className="relative z-10 max-w-5xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-20 items-start">
+          <div className="grid lg:grid-cols-2 gap-10 lg:gap-20 items-start">
 
             {/* Left — heading */}
             <ScrollReveal>
@@ -269,7 +269,7 @@ export default function HomePage() {
           CTA
           GridPattern: radial burst with gold squares
       ══════════════════════════════════════════════════ */}
-      <section className="relative bg-[#070707] py-36 px-6 lg:px-16 border-t border-[#0F0F0F] overflow-hidden">
+      <section className="relative bg-[#070707] py-20 md:py-36 px-6 lg:px-16 border-t border-[#0F0F0F] overflow-hidden">
         {/* Radial grid centred on the heading */}
         <GridPattern
           width={40}
@@ -307,12 +307,12 @@ export default function HomePage() {
               Every security challenge is unique — let&apos;s build
               your solution together.
             </p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <ButtonHover href="/contact" variant="gold" size="lg">
+            <div className="flex flex-col sm:flex-row flex-wrap justify-center items-center gap-4">
+              <ButtonHover href="/contact" variant="gold" size="lg" className="w-full sm:w-auto">
                 Book a Consultation
                 <ArrowRight size={13} />
               </ButtonHover>
-              <ButtonHover href="/services" variant="outline" size="lg">
+              <ButtonHover href="/services" variant="outline" size="lg" className="w-full sm:w-auto">
                 Explore Services
               </ButtonHover>
             </div>

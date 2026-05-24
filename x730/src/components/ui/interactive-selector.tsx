@@ -64,9 +64,35 @@ const InteractiveSelector = () => {
   }, []);
 
   return (
-    <div className="w-full overflow-x-auto">
+    <>
+      {/* Mobile: scroll-snap carousel — Desktop: flex accordion */}
+      <style>{`
+        .x730-sel-scroll::-webkit-scrollbar { display: none; }
+        .x730-sel-scroll {
+          scroll-snap-type: x mandatory;
+          -webkit-overflow-scrolling: touch;
+          scrollbar-width: none;
+        }
+        .x730-sel-card { scroll-snap-align: start; }
+        @media (max-width: 640px) {
+          .x730-sel-inner { height: 320px !important; }
+        }
+      `}</style>
+
+      <div className="x730-sel-scroll w-full overflow-x-auto relative">
+        {/* Right-edge fade hint on mobile */}
+        <div
+          aria-hidden="true"
+          style={{
+            position: 'absolute', top: 0, right: 0, bottom: 0,
+            width: '40px',
+            background: 'linear-gradient(to left, rgba(7,7,7,0.9) 0%, transparent 100%)',
+            pointerEvents: 'none', zIndex: 20,
+          }}
+        />
+
       <div
-        className="options flex items-stretch overflow-hidden mx-auto"
+        className="x730-sel-inner options flex items-stretch overflow-hidden mx-auto"
         style={{
           minWidth: '600px',
           maxWidth: '980px',
@@ -80,6 +106,7 @@ const InteractiveSelector = () => {
           return (
             <div
               key={index}
+              className="x730-sel-card"
               onClick={() => setActiveIndex(index)}
               style={{
                 backgroundImage: `url('${option.image}')`,
@@ -208,7 +235,8 @@ const InteractiveSelector = () => {
           );
         })}
       </div>
-    </div>
+      </div>
+    </>
   );
 };
 

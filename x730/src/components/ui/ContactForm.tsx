@@ -181,7 +181,7 @@ export default function ContactForm() {
         </div>
       </div>
 
-      <div className="mt-8 flex items-center justify-between">
+      <div className="mt-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <p className="text-xs text-[#5A5A5A]">
           All communications are strictly confidential.
         </p>

@@ -165,6 +165,25 @@ const HalideLanding: React.FC = () => {
           pointer-events: auto;
         }
 
+        /* ── Mobile ─────────────────────────────────── */
+        @media (max-width: 767px) {
+          .x730-interface {
+            padding: 5rem 1.5rem 2.5rem;
+            grid-template-columns: 1fr;
+          }
+          .x730-hero-title {
+            font-size: clamp(3rem, 15vw, 4.5rem);
+          }
+          .x730-status-text { display: none; }
+          .x730-bottom-row {
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+            gap: 1.25rem;
+          }
+          .x730-scroll-line { display: none; }
+        }
+
         /* Scroll indicator */
         .x730-scroll-line {
           position: absolute;
@@ -232,8 +251,9 @@ const HalideLanding: React.FC = () => {
           X730_INC.
         </div>
 
-        {/* Top-right: status */}
+        {/* Top-right: status — hidden on mobile */}
         <div
+          className="x730-status-text"
           style={{
             textAlign: 'right',
             fontFamily: 'monospace',
@@ -254,8 +274,9 @@ const HalideLanding: React.FC = () => {
           COMPROMISE
         </h1>
 
-        {/* Bottom row */}
+        {/* Bottom row — stacks on mobile */}
         <div
+          className="x730-bottom-row"
           style={{
             gridColumn: '1 / -1',
             display: 'flex',
