@@ -11,8 +11,17 @@
   --color-x-gold:    #C4A35A;
   --color-x-gold-l:  #D4B56A;
 
+  /* shadcn/component compatibility aliases */
+  --color-background:        #070707;
+  --color-foreground:        #F4F4F5;
+  --color-muted-foreground:  #5A5A5A;
+
   --font-sans:    var(--font-inter);
   --font-display: var(--font-bebas);
+}
+
+@utility transform-style-3d {
+  transform-style: preserve-3d;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
