@@ -63,7 +63,7 @@ export default function HomePage() {
           height={44}
           strokeDasharray="3 3"
           className={cn(
-            'fill-[#C4A35A]/[0.03] stroke-[#C4A35A]/[0.07]',
+            'fill-[#C4A35A]/20 stroke-[#C4A35A]/25',
             '[mask-image:linear-gradient(to_right,white_0%,transparent_80%)]',
           )}
         />
@@ -117,7 +117,7 @@ export default function HomePage() {
             [2, 5], [5, 4], [8, 5], [11, 4], [14, 5],
           ]}
           className={cn(
-            'fill-[#C4A35A]/[0.06] stroke-[#C4A35A]/[0.04]',
+            'fill-[#C4A35A]/30 stroke-[#C4A35A]/15',
             '[mask-image:radial-gradient(ellipse_80%_60%_at_50%_50%,white,transparent)]',
           )}
         />
@@ -161,7 +161,7 @@ export default function HomePage() {
             [9, 7], [11, 7], [13, 7], [15, 7],
           ]}
           className={cn(
-            'fill-[#C4A35A]/[0.08] stroke-[#C4A35A]/[0.05]',
+            'fill-[#C4A35A]/25 stroke-[#C4A35A]/15',
             '[mask-image:linear-gradient(to_bottom_left,white_0%,transparent_55%)]',
           )}
         />
@@ -239,7 +239,7 @@ export default function HomePage() {
           width={32}
           height={32}
           strokeDasharray="2 4"
-          className="fill-[#070707]/[0.04] stroke-[#070707]/[0.06]"
+          className="fill-black/10 stroke-black/20"
         />
 
         <div className="relative z-10 max-w-5xl mx-auto text-center">
@@ -274,7 +274,7 @@ export default function HomePage() {
             [3, 9],  [5, 9],  [7, 8],  [9, 9],  [11, 8],
           ]}
           className={cn(
-            'fill-[#C4A35A]/[0.07] stroke-[#C4A35A]/[0.05]',
+            'fill-[#C4A35A]/30 stroke-[#C4A35A]/20',
             '[mask-image:radial-gradient(500px_circle_at_center,white,transparent)]',
             'inset-x-0 inset-y-[-20%] h-[140%]',
           )}
