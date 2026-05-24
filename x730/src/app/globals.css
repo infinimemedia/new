@@ -12,9 +12,21 @@
   --color-x-gold-l:  #D4B56A;
 
   /* shadcn/component compatibility aliases */
-  --color-background:        #070707;
-  --color-foreground:        #F4F4F5;
-  --color-muted-foreground:  #5A5A5A;
+  --color-background:               #070707;
+  --color-foreground:               #F4F4F5;
+  --color-primary:                  #C4A35A;
+  --color-primary-foreground:       #070707;
+  --color-secondary:                #141414;
+  --color-secondary-foreground:     #F4F4F5;
+  --color-muted:                    #0C0C0C;
+  --color-muted-foreground:         #5A5A5A;
+  --color-accent:                   #1C1C1C;
+  --color-accent-foreground:        #F4F4F5;
+  --color-destructive:              #c0392b;
+  --color-destructive-foreground:   #F4F4F5;
+  --color-border:                   #1C1C1C;
+  --color-input:                    #1C1C1C;
+  --color-ring:                     #C4A35A;
 
   --font-sans:    var(--font-inter);
   --font-display: var(--font-bebas);

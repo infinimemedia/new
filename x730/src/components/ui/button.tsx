@@ -1,33 +1,53 @@
-import * as React from 'react';
-import { Slot } from '@radix-ui/react-slot';
-import { cva, type VariantProps } from 'class-variance-authority';
-import { cn } from '@/lib/utils';
+import { Slot } from "@radix-ui/react-slot";
+import { cva, type VariantProps } from "class-variance-authority";
+import * as React from "react";
+
+import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
   [
-    'inline-flex items-center justify-center gap-2 shrink-0 cursor-pointer select-none',
-    'font-bold uppercase tracking-[0.15em] text-xs',
-    'transition-colors duration-200',
-    'disabled:opacity-50 disabled:pointer-events-none',
-  ].join(' '),
+    "inline-flex items-center justify-center whitespace-nowrap rounded-lg",
+    "text-sm font-medium transition-colors",
+    "outline-offset-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring/70",
+    "disabled:pointer-events-none disabled:opacity-50",
+    "[&_svg]:pointer-events-none [&_svg]:shrink-0",
+  ].join(" "),
   {
     variants: {
       variant: {
-        gold:    'bg-[#C4A35A] text-[#070707] hover:bg-[#D4B56A]',
-        outline: 'border border-[#1C1C1C] text-[#F4F4F5] hover:border-[#C4A35A] hover:text-[#C4A35A]',
-        ghost:   'text-[#C4A35A] hover:text-[#D4B56A]',
-        white:   'bg-[#F4F4F5] text-[#070707] hover:bg-white',
-        dark:    'bg-[#0C0C0C] border border-[#1C1C1C] text-[#F4F4F5] hover:border-[#C4A35A]',
+        /* ── shadcn standard ─────────────────────────── */
+        default:
+          "bg-primary text-primary-foreground shadow-sm shadow-black/5 hover:bg-primary/90",
+        destructive:
+          "bg-destructive text-destructive-foreground shadow-sm shadow-black/5 hover:bg-destructive/90",
+        outline:
+          "border border-input bg-background shadow-sm shadow-black/5 hover:bg-accent hover:text-accent-foreground",
+        secondary:
+          "bg-secondary text-secondary-foreground shadow-sm shadow-black/5 hover:bg-secondary/80",
+        ghost:
+          "hover:bg-accent hover:text-accent-foreground",
+        link:
+          "text-primary underline-offset-4 hover:underline",
+        /* ── X730 brand ──────────────────────────────── */
+        gold:
+          "bg-[#C4A35A] text-[#070707] hover:bg-[#D4B56A]",
+        dark:
+          "bg-[#0C0C0C] border border-[#1C1C1C] text-[#F4F4F5] hover:border-[#C4A35A]",
+        white:
+          "bg-[#F4F4F5] text-[#070707] hover:bg-white",
       },
       size: {
-        sm:   'px-4 py-2 text-[0.65rem]',
-        md:   'px-6 py-3',
-        lg:   'px-8 py-4',
-        icon: 'h-9 w-9',
+        default: "h-9 px-4 py-2",
+        sm:      "h-8 rounded-lg px-3 text-xs",
+        lg:      "h-10 rounded-lg px-8",
+        icon:    "h-9 w-9",
       },
     },
-    defaultVariants: { variant: 'gold', size: 'md' },
-  }
+    defaultVariants: {
+      variant: "default",
+      size: "default",
+    },
+  },
 );
 
 export interface ButtonProps
@@ -38,17 +58,16 @@ export interface ButtonProps
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant, size, asChild = false, ...props }, ref) => {
-    const Comp = asChild ? Slot : 'button';
+    const Comp = asChild ? Slot : "button";
     return (
       <Comp
-        ref={ref}
         className={cn(buttonVariants({ variant, size, className }))}
+        ref={ref}
         {...props}
       />
     );
-  }
+  },
 );
-
-Button.displayName = 'Button';
+Button.displayName = "Button";
 
 export { Button, buttonVariants };

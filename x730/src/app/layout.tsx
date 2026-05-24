@@ -50,7 +50,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${bebasNeue.variable}`}>
+    <html lang="en" className={`dark ${inter.variable} ${bebasNeue.variable}`}>
       <body>
         <Navbar />
         <main>{children}</main>
