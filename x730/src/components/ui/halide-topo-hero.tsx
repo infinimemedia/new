@@ -101,7 +101,7 @@ const HalideLanding: React.FC = () => {
 
         /* Close protection officers in suits — single image */
         .x730-layer-1 {
-          background-image: url('https://images.unsplash.com/photo-2uHWaVj7VV4?auto=format&fit=crop&q=80&w=1200');
+          background-image: url('https://images.pexels.com/photos/3778604/pexels-photo-3778604.jpeg?auto=compress&cs=tinysrgb&w=1200');
           filter: grayscale(1) contrast(1.4) brightness(0.5);
         }
         .x730-layer-2 { opacity: 0; }
