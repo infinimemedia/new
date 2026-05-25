@@ -99,10 +99,10 @@ const HalideLanding: React.FC = () => {
           transition: transform 0.5s ease;
         }
 
-        /* Operations room — single image */
+        /* Close protection officers — single image */
         .x730-layer-1 {
-          background-image: url('https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?auto=format&fit=crop&q=80&w=1200');
-          filter: grayscale(1) contrast(1.3) brightness(0.55);
+          background-image: url('https://images.unsplash.com/photo-1589994965851-a8f479c573a9?auto=format&fit=crop&q=80&w=1200');
+          filter: grayscale(1) contrast(1.4) brightness(0.5);
         }
         .x730-layer-2 { opacity: 0; }
         .x730-layer-3 { opacity: 0; }
