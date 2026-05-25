@@ -99,25 +99,13 @@ const HalideLanding: React.FC = () => {
           transition: transform 0.5s ease;
         }
 
-        /* Operations room — base layer */
+        /* Operations room — single image */
         .x730-layer-1 {
           background-image: url('https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?auto=format&fit=crop&q=80&w=1200');
-          filter: grayscale(1) contrast(1.5) brightness(0.45);
+          filter: grayscale(1) contrast(1.3) brightness(0.55);
         }
-        /* Cyber / tech screens — mid layer */
-        .x730-layer-2 {
-          background-image: url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=1200');
-          filter: grayscale(1) contrast(1.2) brightness(0.6);
-          opacity: 0.55;
-          mix-blend-mode: screen;
-        }
-        /* Security: surveillance / dark tech */
-        .x730-layer-3 {
-          background-image: url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&q=80&w=1200');
-          filter: grayscale(1) contrast(1.5) brightness(0.7);
-          opacity: 0.35;
-          mix-blend-mode: overlay;
-        }
+        .x730-layer-2 { opacity: 0; }
+        .x730-layer-3 { opacity: 0; }
 
         /* Topographic contour rings — gold tint */
         .x730-contours {
